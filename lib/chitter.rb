@@ -14,6 +14,13 @@ class Chitter < Sinatra::Base
 	set :session_secret, 'super secret encryption key'
 	set :partial_template_engine, :haml
 	register Sinatra::Flash
+	use Rack::MethodOverride
+
+	helpers do 
+		def current_user
+			@current_user ||= User.get(session[:user_id]) if session[:user_id]
+		end
+	end
 
 
   get '/' do
@@ -47,6 +54,13 @@ class Chitter < Sinatra::Base
 			flash.now[:errors] = ["The email or password is incorrect"]
 			haml :index
 		end
+	end
+
+	delete '/sessions/logout' do 
+		puts "HELLO WORLD!!!!!"
+		flash.now[:message] = "Good bye!"
+		session[:user_id] = nil
+		redirect '/'
 	end
 
   # start the server if ruby file executed directly
