@@ -8,6 +8,7 @@ require 'json'
 require_relative 'cheet'
 require_relative 'user'
 require_relative 'data_mapper_setup'
+require_relative 'entities'
 
 class Chitter < Sinatra::Base
 
@@ -81,16 +82,15 @@ class Chitter < Sinatra::Base
 end
 
 
-class API < Grape::API
+class ChitterAPI < Grape::API
 
 	format :json
 
-	get :hello do
-	{hello: "world"}
+	get :cheets do
+		cheets = Cheet.all
+		present cheets, with: API::Entities::Cheet
 	end
 
-	get :cheets do
-		Cheet.all
-	end
+
 	  
 end
