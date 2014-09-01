@@ -88,6 +88,8 @@ GEM
     ice_nine (0.11.0)
     json (1.8.1)
     json_pure (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     minitest (5.4.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
@@ -124,5 +126,6 @@ DEPENDENCIES
   dm-postgres-adapter
   grape
   haml
+  launchy
   sinatra-flash
   sinatra-partial

@@ -1,7 +1,7 @@
-- if flash[:notice]
+- if flash[:message]
 
 	#notice
-		= flash[:notice]
+		= flash[:message]
 
 - if flash[:errors] && !flash[:errors].empty?
 	%ul#errors

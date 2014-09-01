@@ -5,6 +5,7 @@ require 'sinatra/partial'
 require 'haml'
 require 'grape'
 require_relative 'cheet'
+require_relative 'user'
 require_relative 'data_mapper_setup'
 
 class Chitter < Sinatra::Base
@@ -20,16 +21,17 @@ class Chitter < Sinatra::Base
   end
 
   post '/users' do 
+  	puts params.inspect
 	@user = User.create(email: params[:email],
 		password: params[:password],
 		:password_confirmation => params[:password_confirmation])
 	if @user.save
 		session[:user_id] = @user.id
 		flash.now[:message] = "Welcome #{@user.email}"
-		redirect '/'
+		haml :index
 	else
 		flash.now[:errors] = @user.errors.full_messages
-		erb :"users/new"
+		haml :index
 	end
   end
 

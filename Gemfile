@@ -13,4 +13,5 @@ gem 'haml'
 
 group :development, :test do 
 	gem 'database_cleaner'	
+	gem 'launchy'
 end
