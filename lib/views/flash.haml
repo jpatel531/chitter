@@ -1,0 +1,11 @@
+- if flash[:notice]
+
+	#notice
+		= flash[:notice]
+
+- if flash[:errors] && !flash[:errors].empty?
+	%ul#errors
+		- flash[:errors].each do |error|
+			%li= error
+
+

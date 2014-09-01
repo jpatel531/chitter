@@ -96,6 +96,12 @@ GEM
       rack (>= 0.4)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
+    sinatra (1.0)
+      rack (>= 1.0)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
+    sinatra-partial (0.4.0)
+      sinatra
     stringex (1.5.1)
     thread_safe (0.3.4)
     tilt (2.0.1)
@@ -112,9 +118,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
+  bcrypt-ruby
   data_mapper
   database_cleaner
   dm-postgres-adapter
   grape
   haml
+  sinatra-flash
+  sinatra-partial
