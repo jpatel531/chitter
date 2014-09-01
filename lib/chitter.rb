@@ -4,6 +4,7 @@ require 'sinatra/flash'
 require 'sinatra/partial'
 require 'haml'
 require 'grape'
+require 'json'
 require_relative 'cheet'
 require_relative 'user'
 require_relative 'data_mapper_setup'
@@ -13,6 +14,7 @@ class Chitter < Sinatra::Base
 	enable :sessions
 	set :session_secret, 'super secret encryption key'
 	set :partial_template_engine, :haml
+	set :public_folder, 'public'
 	register Sinatra::Flash
 	use Rack::MethodOverride
 
@@ -61,6 +63,12 @@ class Chitter < Sinatra::Base
 		flash.now[:message] = "Good bye!"
 		session[:user_id] = nil
 		redirect '/'
+	end
+
+	post '/cheets', provides: :json do
+		response['Access-Control-Allow-Origin'] = '*'
+		data = JSON.parse(request.body.read)
+		@cheet = Cheet.create(text: data["cheet"])
 	end
 
   # start the server if ruby file executed directly

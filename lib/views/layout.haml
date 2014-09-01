@@ -1,7 +1,12 @@
-%html
+%html{:"ng-app" => "chitter"}
+	%head
+		%script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"}
+		%script{:type => "text/javascript", :src => "javascript/application.js"}
 
-	%body
-		
+	%body{:"ng-controller" => "ChitterCtrl"}
+
 		= haml :flash 
 
 		= yield
+
+		

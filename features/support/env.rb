@@ -12,6 +12,17 @@ require 'database_cleaner/cucumber'
 
 Capybara.app = Chitter
 
+require 'capybara/poltergeist'
+
+Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, {debug: false, js_errors: false})
+end
+
+Capybara.javascript_driver = :poltergeist
+
+Capybara.raise_server_errors = false
+
+
 begin
   require 'database_cleaner'
   require 'database_cleaner/cucumber'

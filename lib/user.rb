@@ -10,6 +10,8 @@ class User
 	property :password_token, Text
 	property :password_token_timestamp, Text
 
+	has n, :cheets, through: Resource
+
 	def password=(password)
 		@password = password
 		self.password_digest = BCrypt::Password.create(password)
