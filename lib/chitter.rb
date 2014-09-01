@@ -22,9 +22,9 @@ class Chitter < Sinatra::Base
 
   post '/users' do 
   	puts params.inspect
-	@user = User.create(email: params[:email],
-		password: params[:password],
-		:password_confirmation => params[:password_confirmation])
+	@user = User.create(email: params[:register_email],
+		password: params[:register_password],
+		:password_confirmation => params[:register_password_confirmation])
 	if @user.save
 		session[:user_id] = @user.id
 		flash.now[:message] = "Welcome #{@user.email}"

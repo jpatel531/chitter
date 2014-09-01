@@ -2,11 +2,22 @@ Sign up!
 
 %form{action: '/users', method: 'post'}
 	%label Email
+	%input{type: "text", name: "register_email"}
+
+	%label Password
+	%input{type: "password", name: "register_password"}
+
+	%label Password Confirmation
+	%input{type: "password", name: "register_password_confirmation"}
+	%input{type: 'submit', value: "Sign Up"}
+
+Log In!
+
+%form{action: '/sessions', method: 'post'}
+	%label Email
 	%input{type: "text", name: "email"}
 
 	%label Password
 	%input{type: "password", name: "password"}
 
-	%label Password Confirmation
-	%input{type: "password", name: "password_confirmation"}
-	%input{type: 'submit', value: "Sign Up"}
+	%input{type: 'submit', value: "Log In"}

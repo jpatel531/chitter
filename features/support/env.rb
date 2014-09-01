@@ -7,8 +7,23 @@ require File.join(File.dirname(__FILE__), '..', '..', 'lib/chitter.rb')
 require 'capybara'
 require 'capybara/cucumber'
 require 'rspec'
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
 
 Capybara.app = Chitter
+
+begin
+  require 'database_cleaner'
+  require 'database_cleaner/cucumber'
+
+  DatabaseCleaner.strategy = :truncation
+  rescue NameError
+  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+end
+
+Around do |scenario, block|
+  DatabaseCleaner.cleaning(&block)
+end
 
 class ChitterWorld
   include Capybara::DSL
@@ -20,28 +35,30 @@ World do
   ChitterWorld.new
 end
 
-RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-  config.run_all_when_everything_filtered = true
-  config.filter_run :focus
 
-  # Run specs in random order to surface order dependencies. If you find an
-  # order dependency and want to debug it, you can fix the order by providing
-  # the seed, which is printed after each run.
-  #     --seed 1234
-  config.order = 'random'
 
-   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
+# RSpec.configure do |config|
+#   config.treat_symbols_as_metadata_keys_with_true_values = true
+#   config.run_all_when_everything_filtered = true
+#   config.filter_run :focus
 
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
+#   # Run specs in random order to surface order dependencies. If you find an
+#   # order dependency and want to debug it, you can fix the order by providing
+#   # the seed, which is printed after each run.
+#   #     --seed 1234
+#   config.order = 'random'
 
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
+#    config.before(:suite) do
+#     DatabaseCleaner.strategy = :transaction
+#     DatabaseCleaner.clean_with(:truncation)
+#   end
 
-end
+#   config.before(:each) do
+#     DatabaseCleaner.start
+#   end
+
+#   config.after(:each) do
+#     DatabaseCleaner.clean
+#   end
+
+# end
