@@ -12,7 +12,11 @@ require_relative 'data_mapper_setup'
 class Chitter < Sinatra::Base
 
 	enable :sessions
+
 	set :session_secret, 'super secret encryption key'
+
+	# use Rack::Session::Cookie, :key => "rack.session", domain: "localhost", path: "/", expire_after: 492030443, secret: '123457890'
+
 	set :partial_template_engine, :haml
 	set :public_folder, 'public'
 	register Sinatra::Flash
@@ -66,9 +70,11 @@ class Chitter < Sinatra::Base
 	end
 
 	post '/cheets', provides: :json do
-		response['Access-Control-Allow-Origin'] = '*'
-		data = JSON.parse(request.body.read)
-		@cheet = Cheet.create(text: data["cheet"])
+		puts session[:user_id]
+		# response['Access-Control-Allow-Origin'] = '*'
+		# data = JSON.parse(request.body.read)
+		# cheet = Cheet.create(text: data["cheet"], user: current_user)
+		# current_user.cheets << cheet
 	end
 
   # start the server if ruby file executed directly
@@ -83,4 +89,12 @@ class API < Grape::API
 	  get :hello do
 	    {hello: "world"}
 	  end
+
+	  # resource :cheets do 
+	  # 	desc "Return all cheets"
+	  # 	get :cheets do
+	  # 		Cheet.all
+	  # 	end
+
+	  # end
 end
