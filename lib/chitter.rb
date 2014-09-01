@@ -21,7 +21,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/users' do 
-  	puts params.inspect
+  	# puts params.inspect
 	@user = User.create(email: params[:register_email],
 		password: params[:register_password],
 		:password_confirmation => params[:register_password_confirmation])
@@ -34,6 +34,20 @@ class Chitter < Sinatra::Base
 		haml :index
 	end
   end
+
+	post '/sessions' do 
+		puts params.inspect
+		email, password = params[:login_email], params[:login_password]
+		user = User.authenticate(email, password)
+		if user
+			session[:user_id] = user.id
+			flash.now[:message] = "Welcome #{user.email}"
+			haml :index
+		else
+			flash.now[:errors] = ["The email or password is incorrect"]
+			haml :index
+		end
+	end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
