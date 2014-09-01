@@ -4,10 +4,19 @@ var app;
 app = angular.module('chitter', []);
 
 app.controller('ChitterCtrl', function($scope, $http) {
+  var getCheets;
   $scope.hello = "testing";
-  return $scope.postCheet = function() {
+  $scope.postCheet = function() {
     return $http.post('/cheets', {
       cheet: $scope.cheet
+    }).then(function() {
+      return getCheets();
     });
   };
+  getCheets = function() {
+    return $http.get('/cheets').success(function(data) {
+      return $scope.cheets = data;
+    });
+  };
+  return getCheets();
 });

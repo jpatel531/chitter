@@ -6,3 +6,8 @@
 	%input{type: 'text', name: 'cheet', placeholder: 'Write your cheet here', :"ng-model" => 'cheet'}
 
 	%input{type: 'submit', value: 'Post!'}
+
+
+%ul	
+	%li{:"ng-show" => "cheet"} {{cheet}}
+	%li{:"ng-repeat" => "cheet in cheets"}	{{cheet.text}}

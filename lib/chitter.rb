@@ -70,11 +70,10 @@ class Chitter < Sinatra::Base
 	end
 
 	post '/cheets', provides: :json do
-		puts session[:user_id]
-		# response['Access-Control-Allow-Origin'] = '*'
-		# data = JSON.parse(request.body.read)
-		# cheet = Cheet.create(text: data["cheet"], user: current_user)
-		# current_user.cheets << cheet
+		response['Access-Control-Allow-Origin'] = '*'
+		data = JSON.parse(request.body.read)
+		cheet = Cheet.create(text: data["cheet"], user: current_user)
+		current_user.cheets << cheet
 	end
 
   # start the server if ruby file executed directly
@@ -86,15 +85,12 @@ class API < Grape::API
 
 	format :json
 
-	  get :hello do
-	    {hello: "world"}
-	  end
+	get :hello do
+	{hello: "world"}
+	end
 
-	  # resource :cheets do 
-	  # 	desc "Return all cheets"
-	  # 	get :cheets do
-	  # 		Cheet.all
-	  # 	end
-
-	  # end
+	get :cheets do
+		Cheet.all
+	end
+	  
 end
