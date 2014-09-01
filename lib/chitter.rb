@@ -73,7 +73,7 @@ class Chitter < Sinatra::Base
 	post '/cheets', provides: :json do
 		response['Access-Control-Allow-Origin'] = '*'
 		data = JSON.parse(request.body.read)
-		cheet = Cheet.create(text: data["cheet"], user: current_user)
+		cheet = Cheet.create(text: data["cheet"], user: current_user, timestamp: Time.now)
 		current_user.cheets << cheet
 	end
 
@@ -87,7 +87,7 @@ class ChitterAPI < Grape::API
 	format :json
 
 	get :cheets do
-		cheets = Cheet.all
+		cheets = Cheet.all(order: [:timestamp.desc])
 		present cheets, with: API::Entities::Cheet
 	end
 

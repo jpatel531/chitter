@@ -1,10 +1,9 @@
-app = angular.module('chitter', [])
+app = angular.module('chitter', ['angularMoment'])
 
 app.controller 'ChitterCtrl', ($scope, $http) ->
 
+	
 
-
-	$scope.hello = "testing"
 
 	$scope.postCheet = ->
 		$http.post('/cheets', {cheet: $scope.cheet}).then ->
@@ -17,3 +16,4 @@ app.controller 'ChitterCtrl', ($scope, $http) ->
 
 
 	getCheets()
+
