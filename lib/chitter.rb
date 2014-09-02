@@ -68,6 +68,7 @@ class Chitter < Sinatra::Base
 		data = JSON.parse(request.body.read)
 		cheet = Cheet.create(text: data["cheet"], user: current_user, timestamp: Time.now)
 		current_user.cheets << cheet
+		{status: 200}.to_json
 	end
 
   run! if app_file == $0
