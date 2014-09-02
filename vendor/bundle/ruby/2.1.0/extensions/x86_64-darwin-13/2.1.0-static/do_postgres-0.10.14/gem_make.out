@@ -38,5 +38,5 @@ linking shared-object do_postgres/do_postgres.bundle
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 do_postgres.bundle ./.gem.20140902-44240-xcdt3i/do_postgres
+/usr/bin/install -m 0755 do_postgres.bundle ./.gem.20140902-66147-l9bkyo/do_postgres
 installing default do_postgres libraries

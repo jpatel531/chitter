@@ -9,5 +9,5 @@ linking shared-object websocket_mask.bundle
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 websocket_mask.bundle ./.gem.20140902-44240-5ca6s3
+/usr/bin/install -m 0755 websocket_mask.bundle ./.gem.20140902-66147-1vs4wih
 installing default websocket_mask libraries

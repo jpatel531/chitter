@@ -169,7 +169,7 @@ int t(void) { ffi_raw_call(); return 0; }
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 Undefined symbols for architecture x86_64:
   "_ffi_raw_call", referenced from:
-      _t in conftest-827108.o
+      _t in conftest-817742.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -354,7 +354,7 @@ int t(void) { ffi_prep_cif_var(); return 0; }
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 Undefined symbols for architecture x86_64:
   "_ffi_prep_cif_var", referenced from:
-      _t in conftest-70c86a.o
+      _t in conftest-dc7ae0.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:

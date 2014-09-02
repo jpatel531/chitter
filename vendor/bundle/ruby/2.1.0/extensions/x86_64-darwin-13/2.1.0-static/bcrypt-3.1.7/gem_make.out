@@ -14,5 +14,5 @@ linking shared-object bcrypt_ext.bundle
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20140902-44240-1o3jbrq
+/usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20140902-66147-e1ehsa
 installing default bcrypt_ext libraries

@@ -51,5 +51,5 @@ linking shared-object pg_ext.bundle
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 pg_ext.bundle ./.gem.20140902-44240-8o5dzt
+/usr/bin/install -m 0755 pg_ext.bundle ./.gem.20140902-66147-qybt2j
 installing default pg_ext libraries

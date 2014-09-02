@@ -193,5 +193,5 @@ rmdir -p /Users/jamiepatel/Desktop/Projects/chitter/vendor/bundle/ruby/2.1.0/gem
 rm -rf /Users/jamiepatel/Desktop/Projects/chitter/vendor/bundle/ruby/2.1.0/gems/nokogiri-1.6.3.1/ports
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 nokogiri.bundle ./.gem.20140902-44240-lhskny/nokogiri
+/usr/bin/install -m 0755 nokogiri.bundle ./.gem.20140902-66147-1v4oho4/nokogiri
 installing default nokogiri libraries
