@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
-require File.join(File.dirname(__FILE__), 'lib/chitter.rb')
 
+require_relative 'lib/chitter'
 
 
 run Rack::Cascade.new [ChitterAPI, Chitter]
