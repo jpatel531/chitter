@@ -1,0 +1,349 @@
+have_library: checking for main() in -lpq... -------------------- yes
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64   -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for libpq-fe.h... -------------------- yes
+
+"gcc -E -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libpq-fe.h>
+/* end */
+
+--------------------
+
+have_header: checking for libpq/libpq-fs.h... -------------------- yes
+
+"gcc -E -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libpq/libpq-fs.h>
+/* end */
+
+--------------------
+
+have_header: checking for postgres.h... -------------------- yes
+
+"gcc -E -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG  conftest.c -o conftest.i"
+In file included from conftest.c:3:
+In file included from /usr/local/Cellar/postgresql/9.3.5/include/server/postgres.h:47:
+/usr/local/Cellar/postgresql/9.3.5/include/server/c.h:98:9: warning: '_' macro redefined
+#define _(x) gettext(x)
+        ^
+/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/defines.h:83:10: note: previous definition is here
+# define _(args) args
+         ^
+1 warning generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <postgres.h>
+/* end */
+
+--------------------
+
+have_header: checking for mb/pg_wchar.h... -------------------- yes
+
+"gcc -E -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mb/pg_wchar.h>
+/* end */
+
+--------------------
+
+have_header: checking for catalog/pg_type.h... -------------------- yes
+
+"gcc -E -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <catalog/pg_type.h>
+/* end */
+
+--------------------
+
+have_func: checking for localtime_r()... -------------------- yes
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'localtime_r'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))localtime_r; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))localtime_r; return 0; }
+/* end */
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'localtime_r' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { localtime_r(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { localtime_r(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for gmtime_r()... -------------------- yes
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'gmtime_r'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))gmtime_r; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))gmtime_r; return 0; }
+/* end */
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'gmtime_r' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { gmtime_r(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { gmtime_r(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQsetClientEncoding()... -------------------- yes
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'PQsetClientEncoding'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))PQsetClientEncoding; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))PQsetClientEncoding; return 0; }
+/* end */
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'PQsetClientEncoding' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { PQsetClientEncoding(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { PQsetClientEncoding(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for pg_encoding_to_char()... -------------------- yes
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'pg_encoding_to_char'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))pg_encoding_to_char; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))pg_encoding_to_char; return 0; }
+/* end */
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'pg_encoding_to_char' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { pg_encoding_to_char(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { pg_encoding_to_char(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQfreemem()... -------------------- yes
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'PQfreemem'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))PQfreemem; return 0; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))PQfreemem; return 0; }
+/* end */
+
+"gcc -o conftest -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/x86_64-darwin13.0 -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0/ruby/backward -I/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/include/ruby-2.1.0 -I. -I/usr/local/Cellar/postgresql/9.3.5/include -I/usr/local/Cellar/postgresql/9.3.5/include/server -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/Users/travis/.sm/pkg/active/include -fPIC -mmacosx-version-min=10.7 -pipe -DHAVE_NO_DATETIME_NEWBANG conftest.c  -L. -L/Users/jamiepatel/.rvm/rubies/ruby-2.1.2/lib -L/usr/local/Cellar/postgresql/9.3.5/lib -L. -L/Users/travis/.sm/pkg/active/lib -fPIC -Bstatic -fstack-protector   -arch x86_64  -lpq  -lruby-static -framework CoreFoundation -lpq  -lpthread -ldl -lobjc "
+conftest.c:13:15: warning: implicit declaration of function 'PQfreemem' is invalid in C99 [-Wimplicit-function-declaration]
+int t(void) { PQfreemem(); return 0; }
+              ^
+1 warning generated.
+ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { PQfreemem(); return 0; }
+/* end */
+
+--------------------
+
