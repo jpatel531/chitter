@@ -1,7 +1,10 @@
 = haml :user_forms
 
-.container.app-wrapper{style: "margin-top: 100px"}
 
+.container.app-wrapper{style: "margin-top: 30px"}
+
+	%h1.title.text-center Chitter
+	
 	- if current_user
 		%form{name: "cheetForm", :"ng-submit" => "cheetForm.$valid && postCheet()", novalidate: true}
 			.form-group{:"ng-class" => "{ 'has-error': cheetForm.$error.maxlength}"}
@@ -19,11 +22,11 @@
 				- if current_user
 					%h3.panel-title= current_user.email
 			.panel-body
-				{{cheet}}
+				%p {{cheet}}
 		.panel.panel-default{:"ng-repeat" => "cheet in cheets"}
 			.panel-heading
 				%h3.panel-title {{cheet.user_email}} - <span am-time-ago="cheet.timestamp"></span>
 			.panel-body
-				{{cheet.text}}
+				%p {{cheet.text}}
 
 
