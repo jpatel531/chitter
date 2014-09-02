@@ -27,7 +27,7 @@ class Chitter < Sinatra::Base
 
 
 	get '/' do
-	haml :index
+		haml :index
 	end
 
 	post '/users' do 
@@ -36,11 +36,11 @@ class Chitter < Sinatra::Base
 			:password_confirmation => params[:register_password_confirmation])
 		if @user.save
 			session[:user_id] = @user.id
-			flash.now[:message] = "Welcome #{@user.email}"
-			haml :index
+			flash[:message] = "Welcome #{@user.email}"
+			redirect '/'
 		else
-			flash.now[:errors] = @user.errors.full_messages
-			haml :index
+			flash[:errors] = @user.errors.full_messages
+			redirect '/'
 		end
 	end
 
@@ -49,11 +49,11 @@ class Chitter < Sinatra::Base
 		user = User.authenticate(email, password)
 		if user
 			session[:user_id] = user.id
-			flash.now[:message] = "Welcome #{user.email}"
-			haml :index
+			flash[:message] = "Welcome #{user.email}"
+			redirect '/'
 		else
-			flash.now[:errors] = ["The email or password is incorrect"]
-			haml :index
+			flash[:errors] = ["The email or password is incorrect"]
+			redirect '/'
 		end
 	end
 

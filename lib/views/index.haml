@@ -5,9 +5,9 @@
 	- if current_user
 		%form{name: "cheetForm", :"ng-submit" => "cheetForm.$valid && postCheet()", novalidate: true}
 			.form-group{:"ng-class" => "{ 'has-error': cheetForm.$error.maxlength}"}
-				%input.form-control{type: 'text', name: 'cheet', placeholder: 'Write your cheet here and press enter to send!', :"ng-model" => 'cheet', :"ng-maxlength" => '140',  required: true}
+				%input.form-control.cheet-input{type: 'text', name: 'cheet', placeholder: 'Write your cheet here and press enter to send!', :"ng-model" => 'cheet', :"ng-maxlength" => '140',  required: true}
 				%label.control-label{:"ng-show" => "cheetForm.$error.maxlength" } You're over 140 characters, bro.
-
+				%input.post-cheet{type: 'submit', value: 'Post Cheet', style: "margin-left: -999999px"}
 
 
 

@@ -10,3 +10,13 @@ Given(/^I enter a login email and password$/) do
 	fill_in 'login_password', with: '12345678'
 	click_button 'Log In'
 end
+
+Given(/^I enter an incorrect password$/) do
+	fill_in 'login_email', with: 'bla@bla.net'
+	fill_in 'login_password', with: 'incorrect'
+	click_button 'Log In'
+end
+
+Then(/^I should see an error message$/) do
+	expect(page).to have_content "The email or password is incorrect"
+end

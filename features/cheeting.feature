@@ -12,6 +12,9 @@ Feature: In order to let people know what I am doing
 			When I enter a cheet and press submit
 			Then I should see the cheet on the page
 
-		
+		@javascript
+		Scenario: posting a cheet over 140 characters
+			When I post an oversized cheet
+			Then I should be told off
 
 

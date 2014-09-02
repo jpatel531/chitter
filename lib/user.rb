@@ -20,7 +20,7 @@ class User
 	attr_reader :password
 	attr_accessor :password_confirmation
 
-	validates_confirmation_of :password, message: "Sorry, your passwords don't match%"
+	validates_confirmation_of :password, message: "Sorry, your passwords don't match"
 
 	def self.authenticate(email, password)
 		user = first(email: email)
