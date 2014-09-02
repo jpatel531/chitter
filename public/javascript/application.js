@@ -4,7 +4,7 @@ var app;
 app = angular.module('chitter', ['angularMoment']);
 
 app.controller('ChitterCtrl', [
-  '$scope', 'http', function($scope, $http) {
+  '$scope', '$http', function($scope, $http) {
     var getCheets;
     $scope.postCheet = function() {
       return $http.post('/cheets', {
