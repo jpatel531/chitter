@@ -22,6 +22,8 @@ Creating a Twitter clone as part of our Week 6 Friday Test at Makers Academy. An
 * Cucumber and Capybara for integration tests
 * RSpec for unit tests
 * Grape and GrapeEntity
+* HAML
+* CoffeeScript
 * AngularJS
 * BCrypt
 * DataMapper
