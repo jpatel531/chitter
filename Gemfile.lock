@@ -192,5 +192,6 @@ DEPENDENCIES
   rspec
   rspec-collection_matchers
   selenium-webdriver
+  sinatra
   sinatra-flash
   sinatra-partial
