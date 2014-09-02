@@ -9,7 +9,8 @@ app.controller('ChitterCtrl', function($scope, $http) {
     return $http.post('/cheets', {
       cheet: $scope.cheet
     }).then(function() {
-      return getCheets();
+      getCheets();
+      return $scope.cheet = "";
     });
   };
   getCheets = function() {

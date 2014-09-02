@@ -5,6 +5,7 @@ app.controller 'ChitterCtrl', ($scope, $http) ->
 	$scope.postCheet = ->
 		$http.post('/cheets', {cheet: $scope.cheet}).then ->
 			getCheets()
+			$scope.cheet = ""
 
 
 	getCheets = ->

@@ -2,16 +2,28 @@
 
 .container.app-wrapper{style: "margin-top: 100px"}
 
-	%form{:"ng-submit" => "postCheet()"}
-		%input{type: 'text', name: 'cheet', placeholder: 'Write your cheet here', :"ng-model" => 'cheet'}
+	- if current_user
+		%form{name: "cheetForm", :"ng-submit" => "cheetForm.$valid && postCheet()", novalidate: true}
+			.form-group{:"ng-class" => "{ 'has-error': cheetForm.$error.maxlength}"}
+				%input.form-control{type: 'text', name: 'cheet', placeholder: 'Write your cheet here and press enter to send!', :"ng-model" => 'cheet', :"ng-maxlength" => '140',  required: true}
+				%label.control-label{:"ng-show" => "cheetForm.$error.maxlength" } You're over 140 characters, bro.
 
-		%input{type: 'submit', value: 'Post!'}
+
 
 
 	.cheet-wrapper
 		%p{:"ng-hide" => "cheets"} Loading cheets...
 
-		%ul{:"ng-show" => "cheets"}
+		.panel.panel-default{:"ng-show" => "cheet"}
+			.panel-heading
+				- if current_user
+					%h3.panel-title= current_user.email
+			.panel-body
+				{{cheet}}
+		.panel.panel-default{:"ng-repeat" => "cheet in cheets"}
+			.panel-heading
+				%h3.panel-title {{cheet.user_email}} - <span am-time-ago="cheet.timestamp"></span>
+			.panel-body
+				{{cheet.text}}
 
-			%li{:"ng-repeat" => "cheet in cheets"}	{{cheet.text}} - cheeted by {{cheet.user_email}} at <span am-time-ago="cheet.timestamp"></span>
 

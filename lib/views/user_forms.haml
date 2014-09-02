@@ -35,20 +35,21 @@
 				%h4.modal-title#myModalLabel Sign-Up Form
 			.modal-body
 				%form{action: '/users', method: 'post'}
-					%label Email
-					%input{type: "text", name: "register_email"}
-					%label Password
-					%input{type: "password", name: "register_password"}
-					%label Password Confirmation
-					%input{type: "password", name: "register_password_confirmation"}
-					%input{type: 'submit'} Sign Up
+					.form-group
+						%label Email
+						%input.form-control{type: "text", name: "register_email"}
+					.form-group
+						%label Password
+						%input.form-control{type: "password", name: "register_password"}
+					.form-group
+						%label Password Confirmation
+						%input.form-control{type: "password", name: "register_password_confirmation"}
+					.form-group
+						%input.btn.btn-default{type: 'submit', value: "Sign Up"}
 
-			.modal-footer
-				%button.btn.btn-default{type: 'button', data: {dismiss: 'modal'}} Close
-				%button.btn.btn-primary{type: 'button'} Sign Up!
 
 .modal.fade#logIn{tabindex: "-1", role: 'dialog', :"aria-labelledby" => "myModalLabel", :"aria-hidden" => true}
-	%form{action: '/sessions', method: 'post'}
+	
 	.modal-dialog
 		
 		.modal-content
@@ -56,17 +57,16 @@
 				%button.close{type:'button', data: {dismiss: "modal"}} <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 				%h4.modal-title#myModalLabel Sign-Up Form
 			.modal-body
-		
-				%label Email
-				%input{type: "text", name: "login_email"}
+				%form{action: '/sessions', method: 'post'}
+					.form-group
+						%label Email
+						%input.form-control{type: "text", name: "login_email"}
 
-				%label Password
-				%input{type: "password", name: "login_password"}
-				%input{type: 'submit', value: "Log In"}
-
-
-			.modal-footer
-				%button.btn.btn-default{type: 'button', data: {dismiss: 'modal'}} Close
+					.form-group
+						%label Password
+						%input.form-control{type: "password", name: "login_password"}
+					.form-group
+						%input.btn.btn-default{type: 'submit', value: "Log In"}
 				
 
 
