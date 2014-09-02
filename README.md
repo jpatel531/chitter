@@ -47,3 +47,7 @@ cucumber
 ```
 rspec
 ```
+
+##Planned Extensions
+
+* Replying to Cheets
