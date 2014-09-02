@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'sinatra'
 gem 'grape'
 gem 'grape-entity'
 gem 'data_mapper'
