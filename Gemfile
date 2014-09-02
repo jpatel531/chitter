@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
+ruby '2.1.2'
 
 gem 'sinatra'
+gem 'tilt', '>= 1.3.4', '~> 1.3'
 gem 'grape'
 gem 'grape-entity'
 gem 'data_mapper'
