@@ -13,7 +13,7 @@ Creating a Twitter clone as part of our Week 6 Friday Test at Makers Academy. An
 
 [Here is a link to Chitter on Heroku.](http://chiiitter.herokuapp.com)
 
-[Image1](https://raw.githubusercontent.com/jpatel531/chitter/master/screenshot.jpg)
+![Image1](https://raw.githubusercontent.com/jpatel531/chitter/master/screenshot.jpg)
 
 ##Technologies
 
