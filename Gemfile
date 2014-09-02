@@ -9,6 +9,7 @@ gem 'sinatra-partial'
 
 gem 'bcrypt-ruby'
 
+gem 'pg'
 
 
 gem 'haml'
