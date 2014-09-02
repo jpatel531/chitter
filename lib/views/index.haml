@@ -1,14 +1,17 @@
 = haml :user_forms
 
+.container.app-wrapper{style: "margin-top: 100px"}
 
-%form{:"ng-submit" => "postCheet()"}
-	%input{type: 'text', name: 'cheet', placeholder: 'Write your cheet here', :"ng-model" => 'cheet'}
+	%form{:"ng-submit" => "postCheet()"}
+		%input{type: 'text', name: 'cheet', placeholder: 'Write your cheet here', :"ng-model" => 'cheet'}
 
-	%input{type: 'submit', value: 'Post!'}
+		%input{type: 'submit', value: 'Post!'}
 
 
-.cheet-wrapper
-	%p{:"ng-hide" => "cheets"} Loading cheets...
-	%ul{:"ng-show" => "cheets"}
-		%li{:"ng-repeat" => "cheet in cheets"}	{{cheet.text}} - cheeted by {{cheet.user_email}} at <span am-time-ago="cheet.timestamp"></span>
+	.cheet-wrapper
+		%p{:"ng-hide" => "cheets"} Loading cheets...
+
+		%ul{:"ng-show" => "cheets"}
+
+			%li{:"ng-repeat" => "cheet in cheets"}	{{cheet.text}} - cheeted by {{cheet.user_email}} at <span am-time-ago="cheet.timestamp"></span>
 
