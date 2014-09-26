@@ -10,6 +10,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'sinatra-flash'
 gem 'sinatra-partial'
+gem 'pusher'
 
 gem 'bcrypt-ruby'
 

@@ -5,10 +5,13 @@ require 'sinatra/partial'
 require 'haml'
 require 'grape'
 require 'json'
+require 'pusher'
 require_relative 'cheet'
 require_relative 'user'
 require_relative 'data_mapper_setup'
 require_relative 'entities'
+
+Pusher.url = "http://b1ea057523349531ffb6:204f3f87a9985cb821e7@api.pusherapp.com/apps/90822"
 
 class Chitter < Sinatra::Base
 
@@ -68,7 +71,11 @@ class Chitter < Sinatra::Base
 		data = JSON.parse(request.body.read)
 		cheet = Cheet.create(text: data["cheet"], user: current_user, timestamp: Time.now)
 		current_user.cheets << cheet
+		Pusher['cheets'].trigger('new_cheet', {
+		  cheet: "Hello"
+		})
 		{status: 200}.to_json
+
 	end
 
   run! if app_file == $0

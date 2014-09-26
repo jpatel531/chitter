@@ -5,12 +5,16 @@ app = angular.module('chitter', ['angularMoment']);
 
 app.controller('ChitterCtrl', [
   '$scope', '$http', function($scope, $http) {
-    var getCheets;
+    var channel, getCheets, pusher;
+    pusher = new Pusher('b1ea057523349531ffb6');
+    channel = pusher.subscribe('cheets');
+    channel.bind('new_cheet', function(data) {
+      return getCheets();
+    });
     $scope.postCheet = function() {
       return $http.post('/cheets', {
         cheet: $scope.cheet
       }).then(function() {
-        getCheets();
         return $scope.cheet = "";
       });
     };
