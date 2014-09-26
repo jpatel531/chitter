@@ -1,6 +1,6 @@
 #Chitter
 
-Creating a Twitter clone as part of our Week 6 Friday Test at Makers Academy. An exercise in getting more acquainted with Sinatra, DataMapper and BCrypt. As an extension, I decided to use the Grape gem to create a small API of Cheets, which AngularJS processes asynchronously.
+Creating a Twitter clone as part of our Week 6 Friday Test at Makers Academy. An exercise in getting more acquainted with Sinatra, DataMapper and BCrypt. As an extension, I decided to use the Grape gem to create a small API of Cheets, which AngularJS processes asynchronously. I also use the Pusher API to make posting cheets realtime.
 
 ##Objectives
 
@@ -8,6 +8,7 @@ Creating a Twitter clone as part of our Week 6 Friday Test at Makers Academy. An
 * To learn more about DataMapper.
 * To learn about the Grape and GrapeEntity gems.
 * To practise front-end form-validations with AngularJS, combined with back-end validations with DataMapper
+* To learn about using Pusher for realtime functionality.
 
 ##Heroku
 
@@ -22,6 +23,7 @@ Creating a Twitter clone as part of our Week 6 Friday Test at Makers Academy. An
 * Cucumber and Capybara for integration tests
 * RSpec for unit tests
 * Grape and GrapeEntity
+* Pusher
 * HAML
 * CoffeeScript
 * AngularJS
